@@ -1,3 +1,5 @@
+'use client';
+
 import { MuiAppRouterCacheProvider } from './MuiAppRouterCacheProvider';
 import { MuiThemeProvider } from './MuiThemeProvider';
 
