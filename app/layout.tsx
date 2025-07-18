@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import NextTopLoader from 'nextjs-toploader';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { MuiRtlThemeProvider, ReactQueryProvider } from '@shared/configs';
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <NextTopLoader showSpinner={false} />
         <ReactQueryProvider>
           <MuiRtlThemeProvider>{children}</MuiRtlThemeProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
         </ReactQueryProvider>
       </body>
     </html>
