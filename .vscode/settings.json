@@ -1,3 +1,7 @@
 {
-  "conventionalCommits.scopes": ["root", "shared/config/mui"]
+  "conventionalCommits.scopes": [
+    "root",
+    "shared/config/mui",
+    "shared/config/react-query"
+  ]
 }
