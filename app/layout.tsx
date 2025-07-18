@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import NextTopLoader from 'nextjs-toploader';
 
-import { MuiRtlThemeProvider } from '@shared/configs';
+import { MuiRtlThemeProvider, ReactQueryProvider } from '@shared/configs';
 
 import './globals.css';
 
@@ -26,8 +26,9 @@ export default function RootLayout({
     <html dir="rtl" lang="fa" className={vazirFont.className}>
       <body>
         <NextTopLoader showSpinner={false} />
-
-        <MuiRtlThemeProvider>{children}</MuiRtlThemeProvider>
+        <ReactQueryProvider>
+          <MuiRtlThemeProvider>{children}</MuiRtlThemeProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
