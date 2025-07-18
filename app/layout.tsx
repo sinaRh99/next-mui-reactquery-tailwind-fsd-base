@@ -1,5 +1,16 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import NextTopLoader from 'nextjs-toploader';
+
+import { MuiRtlThemeProvider } from '@shared/configs';
+
 import './globals.css';
+
+const vazirFont = localFont({
+  src: './Vazirmatn[wght].woff2',
+  display: 'swap',
+  variable: '--font-vazir',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,8 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html dir="rtl" lang="fa">
-      <body>{children}</body>
+    <html dir="rtl" lang="fa" className={vazirFont.className}>
+      <body>
+        <NextTopLoader showSpinner={false} />
+
+        <MuiRtlThemeProvider>{children}</MuiRtlThemeProvider>
+      </body>
     </html>
   );
 }
